@@ -128,81 +128,22 @@ updateCart();
 // =========================
 // Planner / Todo Logic
 // =========================
-let todos = JSON.parse(localStorage.getItem("todos")) || [];
+document.addEventListener("DOMContentLoaded", () => {
+  const tasks = document.querySelectorAll(".planner-list li");
 
-function saveTodos() {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
+  tasks.forEach(task => {
+    const id = task.dataset.id;
+    const checkbox = task.querySelector("input[type='checkbox']");
 
-function renderTodos() {
-  const list = document.getElementById("todo-list");
-  if (!list) return;
+    // Load saved state from localStorage
+    const savedState = localStorage.getItem(id);
+    if (savedState === "on") checkbox.checked = true;
 
-  list.innerHTML = "";
-  todos.forEach((todo, index) => {
-    const row = document.createElement("div");
-    row.className = "row todo-item";
-
-    row.innerHTML = `
-      <span class="${todo.done ? 'muted line-through' : ''}">${todo.text}</span>
-      <div>
-        <button class="chip done-btn" data-i="${index}">✓</button>
-        <button class="chip remove-btn" data-i="${index}">✗</button>
-      </div>
-    `;
-    list.appendChild(row);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const input = document.getElementById("todo-input");
-  const addButton = document.getElementById("add-task");
-
-  if (input && addButton) {
-    function addTodo() {
-      const text = input.value.trim();
-      if (!text) return;
-      todos.push({ text, done: false });
-      input.value = "";
-      saveTodos();
-      renderTodos();
-    }
-
-    addButton.addEventListener("click", addTodo);
-    input.addEventListener("keypress", function(e) {
-      if (e.key === "Enter") addTodo();
+    // Save toggle state when changed
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(id, checkbox.checked ? "on" : "off");
     });
-  }
-
-  document.addEventListener("click", function(e) {
-    const index = e.target.dataset.i;
-
-    if (e.target.classList.contains("done-btn")) {
-      todos[index].done = !todos[index].done;
-      saveTodos();
-      renderTodos();
-    }
-
-    if (e.target.classList.contains("remove-btn")) {
-      todos.splice(index, 1);
-      saveTodos();
-      renderTodos();
-    }
-
-    if (e.target.id === "clear-done") {
-      todos = todos.filter(t => !t.done);
-      saveTodos();
-      renderTodos();
-    }
-
-    if (e.target.id === "clear-all") {
-      todos = [];
-      saveTodos();
-      renderTodos();
-    }
   });
-
-  renderTodos();
 });
 
 // =========================
@@ -220,4 +161,5 @@ if (menuButton && navMenu) {
     }
   });
 }
+
 
