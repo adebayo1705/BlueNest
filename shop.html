@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlueNest | Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo.svg" alt="BlueNest logo" class="logo">
+        <span>BlueNest</span>
+      </a>
+
+      <!-- Small-screen toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="current">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="todo.html">Planner</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="content-grid">
+    <section class="shop-intro">
+      <h1>BlueNest Essentials</h1>
+      <p class="intro-text">
+        Items we actually use and recommend — built to last, simple to enjoy.
+      </p>
+
+      <!-- Products will be rendered here -->
+      <div id="product-list" class="product-list"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <h2>Your Cart</h2>
+      <div id="cart-list"></div>
+
+      <div class="cart-summary">
+        <span>Total</span>
+        <span id="cart-total">₦0</span>
+      </div>
+
+      <div class="cart-actions">
+        <button id="checkout" class="btn primary">Checkout with Paystack</button>
+        <button id="clear-cart" class="btn secondary">Clear Cart</button>
+      </div>
+    </aside>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>BlueNest Shop — payments handled securely by Paystack.</small>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/checkout.js" defer></script>
+</body>
+</html>

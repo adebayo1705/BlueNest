@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlueNest | Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo.svg" alt="BlueNest logo" class="logo">
+        <span>BlueNest</span>
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html" class="current">Contact</a>
+        <a href="todo.html">Planner</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="content-area">
+    <section class="contact-section">
+      <h1>We’d love to hear from you</h1>
+      <p class="intro-text">
+        Questions, feedback, or just a quick hello? Drop us a message below.
+      </p>
+
+      <form name="contact" method="POST" data-netlify="true" id="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send Message</button>
+        </div>
+
+        <div id="form-note" class="small muted"></div>
+      </form>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>BlueNest © 2025 — Crafted for everyday living.</small>
+    </div>
+  </footer>
+
+  <script src="js/contact.js" defer></script>
+</body>
+</html>
