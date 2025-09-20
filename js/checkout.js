@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Clear cart after successful payment
         localStorage.removeItem("cart");
         // Optional: Redirect to shop or confirmation page
-        window.location.href = "https://username.github.io/BlueNest/shop.html";
+        window.location.href = "https://adebayo1705.github.io/BlueNest/shop.html";
       },
       onClose: function() {
         alert("Payment window was closed. Transaction not completed.");
@@ -62,4 +62,5 @@ document.addEventListener("DOMContentLoaded", function() {
     paystackHandler.openIframe();
   });
 });
+
 
