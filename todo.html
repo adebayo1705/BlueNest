@@ -33,26 +33,40 @@
 
 
   <main class="content-area full-height">
-    <section class="planner-section">
-      <h1>BlueNest Daily Planner</h1>
-      <p class="intro-text">
-        Keep track of tasks and routines. All notes are saved locally — simple, private, and effective.
-      </p>
-
-      <div class="todo-app">
-        <div class="todo-input-row">
-          <input id="todo-input" placeholder="Add a task and press Enter">
-          <button id="add-task" class="btn-chip">Add</button>
-        </div>
-
-        <div id="todo-list" class="todo-list"></div>
-
-        <div class="todo-actions">
-          <button id="clear-done" class="btn-chip">Clear done</button>
-          <button id="clear-all" class="btn-chip">Clear all</button>
-        </div>
-      </div>
-    </section>
+    <section class="planner">
+  <h2>My Planner</h2>
+  <ul class="planner-list">
+    <li>
+      <span>Morning Exercise</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </li>
+    <li>
+      <span>Read 30 Minutes</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </li>
+    <li>
+      <span>Work on Project</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </li>
+    <li>
+      <span>Evening Walk</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </li>
+  </ul>
+</section>
+    
   </main>
 
 
@@ -65,4 +79,5 @@
   <script src="js/script.js" defer></script>
 </body>
 </html>
+
 
