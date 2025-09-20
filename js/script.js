@@ -134,14 +134,15 @@ document.addEventListener("DOMContentLoaded", () => {
   tasks.forEach(task => {
     const id = task.dataset.id;
     const checkbox = task.querySelector("input[type='checkbox']");
+    if (!checkbox) return; // Skip if no checkbox found
 
-    // Load saved state from localStorage
-    const savedState = localStorage.getItem(id);
-    if (savedState === "on") checkbox.checked = true;
+    // Load saved state from localStorage, default to off
+    const savedState = localStorage.getItem(`planner_${id}`);
+    checkbox.checked = savedState === "on";
 
-    // Save toggle state when changed
+    // Save state whenever checkbox is toggled
     checkbox.addEventListener("change", () => {
-      localStorage.setItem(id, checkbox.checked ? "on" : "off");
+      localStorage.setItem(`planner_${id}`, checkbox.checked ? "on" : "off");
     });
   });
 });
@@ -161,5 +162,6 @@ if (menuButton && navMenu) {
     }
   });
 }
+
 
 
