@@ -6,10 +6,10 @@
 // Product Data
 // =========================
 const products = [
-  { id: 1, name: "Cozy Mug", price: 3500, image: "/assets/images/mug.svg" },
-  { id: 2, name: "Smart Lamp", price: 12000, image: "/assets/images/lamp.svg" },
-  { id: 3, name: "BlueNest Tee", price: 8000, image: "/assets/images/shirt.svg" },
-  { id: 4, name: "Fast Charger", price: 5000, image: "/assets/images/charger.svg" },
+  { id: 1, name: "Cozy Mug", price: 3500, image: "assets/images/mug.svg" },
+  { id: 2, name: "Smart Lamp", price: 12000, image: "assets/images/lamp.svg" },
+  { id: 3, name: "BlueNest Tee", price: 8000, image: "assets/images/shirt.svg" },
+  { id: 4, name: "Fast Charger", price: 5000, image: "assets/images/charger.svg" },
 ];
 
 // =========================
@@ -220,3 +220,4 @@ if (menuButton && navMenu) {
     }
   });
 }
+
